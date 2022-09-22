@@ -1,0 +1,19 @@
+#!/bin/sh
+## ad hoc wrapper to feed help2man(1)
+set -e
+CM2A=${0##*/}
+WRAPPEE=debian/tmp/usr/bin/${CM2A}
+[ -x $WRAPPEE ] || exit 1
+$WRAPPEE $@ | \
+	sed  \
+		-e '/^Usage$/d' -e 's|^  cm2|Usage\: cm2|' \
+		-e '/^=/d' \
+		-e '/^---/d' \
+		-e 's|^--| --|g' \
+		-e 's|^Options|Options\:|' \
+		-e 's|^\([A-Z][-a-zA-Z\ ]*Options\)$|\1:|g' \
+		-e 's|^"\([A-Z][-a-zA-Z\ ]*\)" \([A-Z][-a-zA-Z\ ]*Options\)$|\1 \2:|g' \
+		-e 's|Standalone Reader|Standalone Reader:|'
+
+exit 0
+## eow

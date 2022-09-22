@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+include /usr/share/dpkg/pkg-info.mk
+
+DEB_CM2ANYTHING_LISTOF_ANYTHING = latex xetex html pseudoxml xml man
+
+H2MFLAGS = \
+	--manual="recommonmark Python package" \
+	--source="recommonmark (Debian $(DEB_VERSION))" \
+	--version-string="$(DEB_VERSION)" \
+	--no-info
+
+export PYBUILD_AFTER_INSTALL = \
+	mkdir -p {destdir}/usr/share/man/man1 ;\
+	$(foreach ANYTHING,$(DEB_CM2ANYTHING_LISTOF_ANYTHING), \
+		$(call adhoc_pybuild_after_install_h2m_do,$(ANYTHING)) ;\
+		)
+
+default:
+	@uscan --no-conf --dehs --report || true
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_compress-indep:
+	dh_compress -Xexamples
+
+override_dh_installdocs:
+	dh_installdocs -ppython-recommonmark-doc --doc-main-package=python3-recommonmark
+	dh_installdocs --remaining-packages
+
+override_dh_installexamples:
+	dh_installexamples -ppython-recommonmark-doc --doc-main-package=python3-recommonmark
+	dh_installexamples --remaining-packages
+
+##################################################################################
+## ad hoc machinery
+
+cm2latex_DESCRIPTION =     "convert CommonMark file to LaTeX source"
+cm2xetex_DESCRIPTION =     "convert CommonMark file to XeTeX source"
+cm2html_DESCRIPTION =      "convert CommonMark file to HTML document"
+cm2pseudoxml_DESCRIPTION = "convert CommonMark file to pseudo-XML document"
+cm2xml_DESCRIPTION =       "convert CommonMark file to XML document"
+cm2man_DESCRIPTION =       "convert CommonMark file to man page"
+
+## parameter: ANYTHING
+adhoc_pybuild_after_install_h2m_do = \
+	LC_ALL=C PYTHONPATH={build_dir}:. help2man $(H2MFLAGS) -s 1 \
+			-I debian/man/cm2a.h2m \
+			-n $(cm2$(1)_DESCRIPTION) \
+			-o {destdir}/usr/share/man/man1/cm2$(1).1 \
+		debian/adhoc/wrappers/cm2$(1) ; \
+	sed -i -e 's|possibile|possible|g' {destdir}/usr/share/man/man1/cm2$(1).1
+
+##################################################################################

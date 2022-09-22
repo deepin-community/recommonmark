@@ -1,0 +1,96 @@
+recommonmark (0.6.0+ds-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Jonathan Carter ]
+  * Merge MR#1 from salsa extending the package description.
+
+  [ Dmitry Shachnev ]
+  * Exclude tests/{__init__.pyc,__pycache__} from the repacked tarball.
+  * Add upstream signing key (debian/upstream/signing-key.asc).
+  * New upstream release (closes: #955180).
+  * Switch from python3-commonmark-bkrs to python3-commonmark.
+    - Drop debianization.patch, no longer needed.
+  * Add python3-sphinx to Build-Depends-Indep.
+  * Add two patches to make the tests pass with Sphinx 3.x.
+  * Make the autopkgtests pass:
+    - Fix external references in examples/jgm/README.md.
+    - Allow stderr output because of UserWarnings emitted.
+  * Properly capitalize LaTeX in package description (thanks Lintian).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 19 Aug 2020 20:22:58 +0300
+
+recommonmark (0.4.0+ds-6) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Andrey Rahmatullin ]
+  * Drop Python 2 support.
+
+ -- Andrey Rahmatullin <wrar@debian.org>  Sun, 18 Aug 2019 01:13:28 +0500
+
+recommonmark (0.4.0+ds-5) unstable; urgency=medium
+
+  * Serious bug fix release (Closes: #917513).
+  * Debianization:
+    - debian/control:
+      - Breaks/Replaces fields, add to manage transition.
+
+ -- Jerome Benoit <calculus@rezozer.net>  Fri, 28 Dec 2018 07:37:50 +0000
+
+recommonmark (0.4.0+ds-4) unstable; urgency=medium
+
+  * Serious bug fix release (Closes: #917378).
+  * Debianization:
+    - debian/control:
+      - Breaks/Replaces fields, add to manage transition;
+    - debian/python3-recommonmark.manpages, rename to
+    - debian/recommonmark-scripts.manpages.
+
+ -- Jerome Benoit <calculus@rezozer.net>  Thu, 27 Dec 2018 08:57:19 +0000
+
+recommonmark (0.4.0+ds-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Fix Format URL to correct one
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Jerome Benoit ]
+  * d/control: Dump debhelper to 11
+  * d/control: Dump Standards-Version to 4.3.0
+  * d/control: Remove empty Build-Depends field
+  * d/control: Dump recommonmark-scripts to Python 3
+  * d/rules: Include pkg-info.mk
+  * d/rules: Remove get-orig-source target
+  * d/rules: Correct typo in manpages (ad hoc)
+  * d/copyright: Refresh year-tuples
+  * d/copyright: Add full text for License CC-BY-SA-4.0
+  * d/a/d/spec.txt: Correct typo
+  * d/t/compose-examples: Dump debhelper to 11
+
+ -- Jerome Benoit <calculus@rezozer.net>  Wed, 26 Dec 2018 14:24:33 +0000
+
+recommonmark (0.4.0+ds-2) unstable; urgency=medium
+
+  * debian/tests fix release.
+  * Debianization:
+    - debian/control:
+      - Depends fields, add python-pkg-resources.
+
+ -- Jerome Benoit <calculus@rezozer.net>  Sun, 16 Oct 2016 01:50:59 +0000
+
+recommonmark (0.4.0+ds-1) unstable; urgency=medium
+
+  * Initial release (Closes: #838987).
+
+ -- Jerome Benoit <calculus@rezozer.net>  Tue, 04 Oct 2016 00:37:01 +0000

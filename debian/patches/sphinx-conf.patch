@@ -1,0 +1,121 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Mon, 17 Aug 2020 20:50:43 +0300
+Subject: Adapt conf.py files to Sphinx 3.x
+
+---
+ docs/conf.py                             | 2 +-
+ tests/sphinx_code_block/conf.py          | 4 ++--
+ tests/sphinx_custom_md/conf.py           | 4 ++--
+ tests/sphinx_generic/conf.py             | 4 ++--
+ tests/sphinx_indented_code/conf.py       | 4 ++--
+ tests/sphinx_nested_header_block/conf.py | 4 ++--
+ tests/sphinx_xref/conf.py                | 5 ++---
+ 7 files changed, 13 insertions(+), 14 deletions(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index 5c2f8c1..782be2c 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -24,7 +24,7 @@ import recommonmark
+ from recommonmark.transform import AutoStructify
+ 
+ 
+-source_suffix = ['.rst', '.md']
++source_suffix = { '.md': 'markdown' }
+ 
+ # -- General configuration ------------------------------------------------
+ 
+diff --git a/tests/sphinx_code_block/conf.py b/tests/sphinx_code_block/conf.py
+index 6b0140e..8f28984 100644
+--- a/tests/sphinx_code_block/conf.py
++++ b/tests/sphinx_code_block/conf.py
+@@ -4,8 +4,8 @@
+ from recommonmark.parser import CommonMarkParser
+ 
+ templates_path = ['_templates']
+-source_suffix = '.md'
+-source_parsers = { '.md': CommonMarkParser }
++extensions = ['recommonmark']
++source_suffix = { '.md': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'
+diff --git a/tests/sphinx_custom_md/conf.py b/tests/sphinx_custom_md/conf.py
+index b29157b..7fd4b08 100644
+--- a/tests/sphinx_custom_md/conf.py
++++ b/tests/sphinx_custom_md/conf.py
+@@ -5,8 +5,8 @@ from recommonmark.parser import CommonMarkParser
+ from recommonmark.transform import AutoStructify
+ 
+ templates_path = ['_templates']
+-source_suffix = '.markdown'
+-source_parsers = { '.markdown': CommonMarkParser }
++extensions = ['recommonmark']
++source_suffix = { '.markdown': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'
+diff --git a/tests/sphinx_generic/conf.py b/tests/sphinx_generic/conf.py
+index 6b0140e..8f28984 100644
+--- a/tests/sphinx_generic/conf.py
++++ b/tests/sphinx_generic/conf.py
+@@ -4,8 +4,8 @@
+ from recommonmark.parser import CommonMarkParser
+ 
+ templates_path = ['_templates']
+-source_suffix = '.md'
+-source_parsers = { '.md': CommonMarkParser }
++extensions = ['recommonmark']
++source_suffix = { '.md': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'
+diff --git a/tests/sphinx_indented_code/conf.py b/tests/sphinx_indented_code/conf.py
+index f441071..306ff2f 100644
+--- a/tests/sphinx_indented_code/conf.py
++++ b/tests/sphinx_indented_code/conf.py
+@@ -4,8 +4,8 @@
+ from recommonmark.parser import CommonMarkParser
+ 
+ templates_path = ['_templates']
+-source_suffix = '.md'
+-source_parsers = { '.md': CommonMarkParser }
++extensions = ['recommonmark']
++source_suffix = { '.md': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'
+diff --git a/tests/sphinx_nested_header_block/conf.py b/tests/sphinx_nested_header_block/conf.py
+index 6b0140e..8f28984 100644
+--- a/tests/sphinx_nested_header_block/conf.py
++++ b/tests/sphinx_nested_header_block/conf.py
+@@ -4,8 +4,8 @@
+ from recommonmark.parser import CommonMarkParser
+ 
+ templates_path = ['_templates']
+-source_suffix = '.md'
+-source_parsers = { '.md': CommonMarkParser }
++extensions = ['recommonmark']
++source_suffix = { '.md': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'
+diff --git a/tests/sphinx_xref/conf.py b/tests/sphinx_xref/conf.py
+index 443a026..132e503 100644
+--- a/tests/sphinx_xref/conf.py
++++ b/tests/sphinx_xref/conf.py
+@@ -3,12 +3,11 @@
+ 
+ from recommonmark.parser import CommonMarkParser
+ 
+-extensions = 'sphinx.ext.autosectionlabel']
++extensions = ['sphinx.ext.autosectionlabel', 'recommonmark']
+ autosectionlabel_prefix_document = True
+ 
+ templates_path = ['_templates']
+-source_suffix = '.md'
+-source_parsers = { '.md': CommonMarkParser }
++source_suffix = { '.md': 'markdown' }
+ master_doc = 'index'
+ project = u'sphinxproj'
+ copyright = u'2015, rtfd'

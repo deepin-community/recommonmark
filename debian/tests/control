@@ -1,0 +1,7 @@
+Test-Command: python3 /usr/bin/cm2html /usr/share/doc/python3-recommonmark/examples/jgm/README.md $AUTOPKGTEST_TMP/README.html
+Depends: python3-recommonmark, recommonmark-scripts, python-recommonmark-doc
+Restrictions: allow-stderr
+
+Tests: compose-examples
+Depends: recommonmark-scripts, python-recommonmark-doc, texlive-latex-base, texlive-latex-recommended, texlive-fonts-recommended, texlive-xetex
+Restrictions: allow-stderr

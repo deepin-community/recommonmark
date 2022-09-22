@@ -1,0 +1,11 @@
+#!/bin/sh
+# autopkgtest check: compose document examples
+set -ue
+cd $AUTOPKGTEST_TMP
+
+cp -prd /usr/share/doc/python3-recommonmark/examples .
+cd examples
+
+make -C jgm check
+
+exit 0
