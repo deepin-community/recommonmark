@@ -1,9 +1,12 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: recommonmark
-Upstream-Contact: `Read the Docs' <http://readthedocs.org>
-Source: https://pypi.python.org/pypi/recommonmark
-X-Source: https://github.com/rtfd/recommonmark
+Upstream-Contact: https://github.com/readthedocs
+Source: https://github.com/readthedocs/recommonmark
 Files-Excluded:
+ .gitignore
+ .travis.yml
+ prospector.yml
+ tox.ini
  recommonmark.egg-info
  setup.cfg
  tests/__init__.pyc
@@ -17,12 +20,12 @@ License: MIT
 
 Files: debian/*
 Copyright:
- 2016-2018 Jerome Benoit <calculus@rezozer.net>
+ 2016-2022 Jerome Benoit <calculus@rezozer.net>
 License: MIT
 
 Files: debian/adhoc/docs/spec.txt
 Copyright:
- 2014-2018 John MacFarlane
+ 2014-2022 John MacFarlane
 License: CC-BY-SA-4.0
 Comment:
  This document is part of the material provided by John MacFarlane whose
@@ -31,7 +34,7 @@ Comment:
 
 Files: debian/adhoc/examples/jgm/README.md
 Copyright:
- 2014 John MacFarlane
+ 2014-2022 John MacFarlane
 License: BSD-2-clause
 Comment:
  ibidem.

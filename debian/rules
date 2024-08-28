@@ -48,7 +48,6 @@ adhoc_pybuild_after_install_h2m_do = \
 			-I debian/man/cm2a.h2m \
 			-n $(cm2$(1)_DESCRIPTION) \
 			-o {destdir}/usr/share/man/man1/cm2$(1).1 \
-		debian/adhoc/wrappers/cm2$(1) ; \
-	sed -i -e 's|possibile|possible|g' {destdir}/usr/share/man/man1/cm2$(1).1
+		debian/adhoc/wrappers/cm2$(1)
 
 ##################################################################################
