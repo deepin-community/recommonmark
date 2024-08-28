@@ -1,3 +1,78 @@
+recommonmark (0.7.1+ds-5) unstable; urgency=medium
+
+  * Team upload.
+  * Adopt test to new sphinx version (Closes: #1030424)
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Sat, 04 Feb 2023 10:20:38 +0100
+
+recommonmark (0.7.1+ds-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch for Sphinx 5 (Closes: #1013385)
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Mon, 26 Dec 2022 13:45:10 +0100
+
+recommonmark (0.7.1+ds-3) unstable; urgency=medium
+
+  * Debianization:
+    - d/{rules,adhoc/wrappers/cm2a}, clean up manpage machinery.
+
+ -- Jerome Benoit <calculus@rezozer.net>  Sun, 04 Dec 2022 14:51:07 +0000
+
+recommonmark (0.7.1+ds-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 17 Oct 2022 03:10:26 +0100
+
+recommonmark (0.7.1+ds-1) unstable; urgency=medium
+
+  * New upstream minor version (closes: #993074).
+  * Debianization:
+    - d/copyright:
+      - Files-Excluded list, refresh;
+    - d/control:
+      - Standards-Version, bump to 4.6.1 (no change).
+
+ -- Jerome Benoit <calculus@rezozer.net>  Sat, 28 May 2022 21:30:18 +0000
+
+recommonmark (0.6.0+ds-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + python-recommonmark-doc: Add Multi-Arch: foreign.
+  * Bump debhelper from old 11 to 13.
+  * Remove overrides for lintian tags that are no longer supported.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Update standards version to 4.5.1, no changes needed.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends-Indep: Drop versioned constraint on python3-sphinx.
+    + python3-recommonmark: Drop versioned constraint on python-recommonmark in
+      Replaces.
+    + python3-recommonmark: Drop versioned constraint on python-recommonmark in
+      Breaks.
+    + recommonmark-scripts: Drop versioned constraint on python-recommonmark and
+      python3-recommonmark in Replaces.
+    + recommonmark-scripts: Drop versioned constraint on python-recommonmark and
+      python3-recommonmark in Breaks.
+
+  [ Jerome Benoit ]
+  * d/{control,copyright}, {Homepage,Source} field migrate to github
+    (closes: #993073).
+  * d/watch: migrate to github repository (closes: #993072).
+  * d/upstream/signing-key.asc: discard (see d/watch update).
+  * d/upstream/metadata: update.
+  * d/control: introduce and set to no.
+
+ -- Jerome Benoit <calculus@rezozer.net>  Sat, 28 May 2022 18:38:38 +0000
+
 recommonmark (0.6.0+ds-1) unstable; urgency=medium
 
   * Team upload.

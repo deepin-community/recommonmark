@@ -1,2 +1,4 @@
 sphinx-conf.patch
 sphinx-tests.patch
+0003-Fix-tests-with-Sphinx-5.patch
+0004-Adopt-test-to-new-sphinx-version.patch
