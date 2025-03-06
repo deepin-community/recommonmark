@@ -7,10 +7,10 @@ Subject: Adapt tests to pass with modern Sphinx versions
  1 file changed, 12 insertions(+), 11 deletions(-)
 
 diff --git a/tests/test_sphinx.py b/tests/test_sphinx.py
-index 06078b1..10520e6 100644
+index 74f83cf..ed56ec8 100644
 --- a/tests/test_sphinx.py
 +++ b/tests/test_sphinx.py
-@@ -142,17 +142,17 @@ class GenericTests(SphinxIntegrationTests):
+@@ -148,17 +148,17 @@ class GenericTests(SphinxIntegrationTests):
          output = self.read_file('index.html')
          self.assertIn(
              ('<ul class="simple">\n'
@@ -34,7 +34,7 @@ index 06078b1..10520e6 100644
               '</ol>'),
              output
          )
-@@ -207,16 +207,17 @@ class CustomExtensionTests(SphinxIntegrationTests):
+@@ -213,16 +213,17 @@ class CustomExtensionTests(SphinxIntegrationTests):
      def test_integration(self):
          output = self.read_file('index.html')
          self.assertIn('<table ', output)

@@ -1,0 +1,22 @@
+From: Jochen Sprickerhof <jspricke@debian.org>
+Date: Sat, 4 Feb 2023 10:18:38 +0100
+Subject: Adopt test to new sphinx version
+
+Closes: #1030424
+---
+ tests/test_sphinx.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/test_sphinx.py b/tests/test_sphinx.py
+index c37e740..a6510a6 100644
+--- a/tests/test_sphinx.py
++++ b/tests/test_sphinx.py
+@@ -219,7 +219,7 @@ class CustomExtensionTests(SphinxIntegrationTests):
+ 
+ 
+         self.assertIn(
+-            ('<div class="contents topic" id="contents">\n'
++            ('<nav class="contents" id="contents">\n'
+              '<p class="topic-title">Contents</p>\n'
+              '<ul class="simple">\n'
+              '<li><p><a class="reference internal" href="#header" id="id1">Header</a></p>\n<ul>\n'
