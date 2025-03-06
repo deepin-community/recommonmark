@@ -12,8 +12,7 @@ $WRAPPEE $@ | \
 		-e 's|^--| --|g' \
 		-e 's|^Options|Options\:|' \
 		-e 's|^\([A-Z][-a-zA-Z\ ]*Options\)$|\1:|g' \
-		-e 's|^"\([A-Z][-a-zA-Z\ ]*\)" \([A-Z][-a-zA-Z\ ]*Options\)$|\1 \2:|g' \
-		-e 's|Standalone Reader|Standalone Reader:|'
+		-e 's|^"\([A-Z][-a-zA-Z\ ]*\)" \([A-Z][-a-zA-Z\ ]*Options\)$|\1 \2:|g'
 
 exit 0
 ## eow
